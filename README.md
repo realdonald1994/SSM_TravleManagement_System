@@ -1,2 +1,2 @@
 # SSM_TravleManagement_System
-Environemnt:Spring+SpringMVC+Mybatis
+## Environment:Spring+SpringMVC+Mybatis
