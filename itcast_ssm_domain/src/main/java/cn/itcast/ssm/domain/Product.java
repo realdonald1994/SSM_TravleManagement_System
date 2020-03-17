@@ -1,5 +1,7 @@
 package cn.itcast.ssm.domain;
 
+import cn.itcast.utils.DateUtil;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -59,7 +61,11 @@ public class Product implements Serializable {
     }
 
     public String getDepartureTimeStr() {
+        if(departureTime!=null){
+           return DateUtil.dateToString(departureTime,"yyyy-MM-dd HH:mm:ss");
+        }
         return departureTimeStr;
+
     }
 
     public void setDepartureTimeStr(String departureTimeStr) {
@@ -91,6 +97,14 @@ public class Product implements Serializable {
     }
 
     public String getProductStatusStr() {
+        if(productStatus !=null){
+            if(productStatus==0){
+                productStatusStr="close";
+            }
+            if(productStatus==1){
+                productStatusStr="open";
+            }
+        }
         return productStatusStr;
     }
 

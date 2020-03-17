@@ -30,7 +30,7 @@
     </bean>
 
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value=""></property>
+        <property name="basePackage" value="cn.itcast.ssm.dao"></property>
     </bean>
 
 
