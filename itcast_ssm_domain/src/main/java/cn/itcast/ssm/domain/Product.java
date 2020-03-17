@@ -1,6 +1,7 @@
 package cn.itcast.ssm.domain;
 
 import cn.itcast.utils.DateUtil;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,6 +14,7 @@ public class Product implements Serializable {
     private String productNum; // pro_num
     private String productName;// pro_name;
     private String cityName;// dep city name
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
     private Date departureTime;//dep_time
     private String departureTimeStr;
     private Double productPrice;//pro_price;

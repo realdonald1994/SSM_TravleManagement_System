@@ -17,8 +17,24 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
+
+    /**
+     * search all product
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<Product> findAll() throws Exception {
         return productDao.findAll();
+    }
+
+    /**
+     * save product
+     * @param product
+     * @throws Exception
+     */
+    @Override
+    public void save(Product product) throws Exception {
+        productDao.save(product);
     }
 }

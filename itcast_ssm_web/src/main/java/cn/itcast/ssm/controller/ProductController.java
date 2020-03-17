@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -17,6 +19,12 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
+    /**
+     * search all product
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/findAll.do")
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
@@ -24,5 +32,15 @@ public class ProductController {
         mv.addObject("productList",products);
         mv.setViewName("product-list");
         return mv;
+    }
+
+    /**
+     * save product
+     * @param product
+     */
+    @RequestMapping("/save.do")
+    public String save(Product product) throws Exception {
+        productService.save(product);
+        return "redirect:findAll.do";
     }
 }

@@ -14,4 +14,11 @@ public interface ProductService {
      * @throws Exception
      */
     List<Product> findAll() throws Exception;
+
+    /**
+     * save product
+     * @param product
+     * @throws Exception
+     */
+    void save(Product product) throws Exception;
 }
