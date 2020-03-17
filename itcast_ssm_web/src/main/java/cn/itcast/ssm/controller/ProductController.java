@@ -22,7 +22,7 @@ public class ProductController {
         ModelAndView mv = new ModelAndView();
         List<Product> products = productService.findAll();
         mv.addObject("productList",products);
-        mv.setViewName("product-list1");
+        mv.setViewName("product-list");
         return mv;
     }
 }

@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="${pageContext.request.contextPath}/product/findAll.do">search all</a>
+<%--    <a href="${pageContext.request.contextPath}/product/findAll.do">search all</a>--%>
+    <jsp:forward page="main.jsp"></jsp:forward>
 </body>
 </html>
