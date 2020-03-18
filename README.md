@@ -1,7 +1,7 @@
 # TravleManagement_System #
 ### spring+springmvc+mybatis+AdminLTE+PageHelper ###
-### [AdminLTE](https://github.com/ColorlibHQ/AdminLTE) ###
-### [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) ###
+### AdminLTE github: [AdminLTE](https://github.com/ColorlibHQ/AdminLTE) ###
+### PageHelper github: [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) ###
 # 1. System demo #
 
 # 2. Technical framework #
