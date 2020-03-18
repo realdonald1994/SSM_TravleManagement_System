@@ -10,10 +10,10 @@ public class Traveller implements Serializable {
     private String name;
     private String sex;
     private String phoneNum;
-    private Integer credentialsType;
+    private Integer credentialsType;//type of certificate: 0 driver license 1 passport 2 student id card
     private String credentialsTypeStr;
     private String credentialsNum;
-    private Integer travellerType;
+    private Integer travellerType;//type of traveller: 0 adult 1 children
     private String travellerTypeStr;
 
     public Integer getId() {
@@ -57,6 +57,15 @@ public class Traveller implements Serializable {
     }
 
     public String getCredentialsTypeStr() {
+        if (credentialsType != null) {
+            if (credentialsType == 0) {
+                credentialsTypeStr = "driver license";
+            } else if (credentialsType == 1) {
+                credentialsTypeStr = "passport";
+            } else if (credentialsType == 2) {
+                credentialsTypeStr = "student id card";
+            }
+        }
         return credentialsTypeStr;
     }
 
@@ -81,6 +90,13 @@ public class Traveller implements Serializable {
     }
 
     public String getTravellerTypeStr() {
+        if (travellerType != null) {
+            if (travellerType == 0) {
+                travellerTypeStr="adult";
+            } else if (travellerType == 1){
+                travellerTypeStr="children";
+            }
+        }
         return travellerTypeStr;
     }
 

@@ -166,12 +166,12 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 				<h1>
-					数据管理 <small>数据列表</small>
+					Data <small>list</small>
 				</h1>
 				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-					<li><a href="#">数据管理</a></li>
-					<li class="active">数据列表</li>
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Data</a></li>
+					<li class="active">list</li>
 				</ol>
 			</section>
 			<!-- 内容头部 /-->
@@ -182,7 +182,7 @@
 				<!-- .box-body -->
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<h3 class="box-title">列表</h3>
+						<h3 class="box-title">list</h3>
 					</div>
 
 					<div class="box-body">
@@ -205,7 +205,7 @@
 											<i class="fa fa-check"></i> open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
-											<i class="fa fa-ban"></i> 屏蔽
+											<i class="fa fa-ban"></i> close
 										</button>
 										<button type="button" class="btn btn-default" title="刷新">
 											<i class="fa fa-refresh"></i> refresh
@@ -291,7 +291,7 @@
 											<i class="fa fa-check"></i> open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
-											<i class="fa fa-ban"></i> 屏蔽
+											<i class="fa fa-ban"></i> close
 										</button>
 										<button type="button" class="btn btn-default" title="刷新">
 											<i class="fa fa-refresh"></i> refresh

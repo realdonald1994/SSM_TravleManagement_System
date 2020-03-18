@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface OrdersService {
     List<Orders> findAll(int page,int size)throws Exception;
+
+    Orders findById(int ordersId) throws Exception;
 }
