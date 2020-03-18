@@ -20,7 +20,7 @@
 ### 6. FrontEnd ###
 - **AdminLTE**
 
-## 3. Project structure ##
+# 3. Project structure #
 
 
     itcast_ssm --------------------------------------------------------- parent module
@@ -68,3 +68,5 @@
                 |- plugins ----------------------------------------------- AdminLTE
                 |- pages ----------------------------------------------- web page
     |- itcast_ssm_utils -------------------------------------------------------- Util Class
+    
+# 4. Reference #
