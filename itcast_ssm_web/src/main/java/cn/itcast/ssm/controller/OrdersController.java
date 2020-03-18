@@ -21,20 +21,6 @@ public class OrdersController {
     @Autowired
     private OrdersService ordersService;
 
-//    /**
-//     * search all orders- Unpaginated
-//     * @return
-//     * @throws Exception
-//     */
-//    @RequestMapping("/findAll.do")
-//    public ModelAndView findAll() throws Exception{
-//        ModelAndView mv = new ModelAndView();
-//        List<Orders> orders = ordersService.findAll();
-//        mv.addObject("ordersList",orders);
-//        mv.setViewName("orders-list");
-//        return mv;
-//    }
-
     /**
      * search all orders-Paginated
      * @return
@@ -48,7 +34,7 @@ public class OrdersController {
         //pageinfo->pagebean
         PageInfo pageInfo = new PageInfo(orders);
         mv.addObject("pageInfo",pageInfo);
-        mv.setViewName("orders-page-list");
+        mv.setViewName("orders-list");
         return mv;
     }
 

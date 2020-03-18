@@ -194,21 +194,21 @@
 							<div class="pull-left">
 								<div class="form-group form-inline">
 									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建"
+										<button type="button" class="btn btn-default" title="Add"
 											onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
-											<i class="fa fa-file-o"></i> 新建
+											<i class="fa fa-file-o"></i> add
 										</button>
-										<button type="button" class="btn btn-default" title="删除">
-											<i class="fa fa-trash-o"></i> 删除
+										<button type="button" class="btn btn-default" title="delete">
+											<i class="fa fa-trash-o"></i> delete
 										</button>
-										<button type="button" class="btn btn-default" title="开启">
-											<i class="fa fa-check"></i> 开启
+										<button type="button" class="btn btn-default" title="open">
+											<i class="fa fa-check"></i> open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
 											<i class="fa fa-ban"></i> 屏蔽
 										</button>
-										<button type="button" class="btn btn-default" title="刷新">
-											<i class="fa fa-refresh"></i> 刷新
+										<button type="button" class="btn btn-default" title="refresh">
+											<i class="fa fa-refresh"></i> refresh
 										</button>
 									</div>
 								</div>
@@ -216,7 +216,7 @@
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
 									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
+										placeholder="search"> <span
 										class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>
@@ -231,12 +231,12 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">订单编号</th>
-										<th class="sorting_asc sorting_asc_disabled">产品名称</th>
-										<th class="sorting_desc sorting_desc_disabled">金额</th>
-										<th class="sorting">下单时间</th>
-										<th class="text-center sorting">订单状态</th>
-										<th class="text-center">操作</th>
+										<th class="sorting_desc">order number</th>
+										<th class="sorting_asc sorting_asc_disabled">product name</th>
+										<th class="sorting_desc sorting_desc_disabled">price</th>
+										<th class="sorting">order time</th>
+										<th class="text-center sorting">Order Status</th>
+										<th class="text-center">operating</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -253,9 +253,9 @@
 											<td>${orders.orderTimeStr }</td>
 											<td class="text-center">${orders.orderStatusStr }</td>
 											<td class="text-center">
-												<button type="button" class="btn bg-olive btn-xs">订单</button>
-												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>
-												<button type="button" class="btn bg-olive btn-xs">编辑</button>
+												<button type="button" class="btn bg-olive btn-xs">order</button>
+												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">details</button>
+												<button type="button" class="btn bg-olive btn-xs">edit</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -278,19 +278,19 @@
 								<div class="form-group form-inline">
 									<div class="btn-group">
 										<button type="button" class="btn btn-default" title="新建">
-											<i class="fa fa-file-o"></i> 新建
+											<i class="fa fa-file-o"></i> add
 										</button>
 										<button type="button" class="btn btn-default" title="删除">
-											<i class="fa fa-trash-o"></i> 删除
+											<i class="fa fa-trash-o"></i> delete
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
-											<i class="fa fa-check"></i> 开启
+											<i class="fa fa-check"></i> open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
 											<i class="fa fa-ban"></i> 屏蔽
 										</button>
 										<button type="button" class="btn btn-default" title="刷新">
-											<i class="fa fa-refresh"></i> 刷新
+											<i class="fa fa-refresh"></i> refresh
 										</button>
 									</div>
 								</div>
@@ -298,7 +298,7 @@
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
 									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
+										placeholder="search"> <span
 										class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>
@@ -315,30 +315,30 @@
                 <div class="box-footer">
                     <div class="pull-left">
                         <div class="form-group form-inline">
-                            总共${pageInfo.pages}页，共${pageInfo.total}条数据。 每页
+							Total <b>${pageInfo.pages} </b>pages and <b>${pageInfo.total} </b>records Show
                             <select class="form-control" id="changePageSize" onchange="changePageSize()">
-                                <option style="display:none" selected>1</option>
+                                <option style="display:none" selected></option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
-                            </select> 条
+                            </select> per page
                         </div>
                     </div>
 
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="${pageContext.request.contextPath}/orders/findAll.do?page=1&size=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                <a href="${pageContext.request.contextPath}/orders/findAll.do?page=1&size=${pageInfo.pageSize}" aria-label="Previous">First Page</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}"><</a></li>
                             <c:forEach begin="1" end="${pageInfo.pages}" var="pageNum">
                                 <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a></li>
                             </c:forEach>
-                            <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a></li>
+                            <li><a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">></a></li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                <a href="${pageContext.request.contextPath}/orders/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}" aria-label="Next">Last Page</a>
                             </li>
                         </ul>
                     </div>
@@ -362,8 +362,8 @@
 			<div class="pull-right hidden-xs">
 				<b>Version</b> 1.0.8
 			</div>
-			<strong>Copyright &copy; 2014-2017 <a
-				href="http://www.itcast.cn">研究院研发部</a>.
+			<strong>Copyright &copy; 2020 <a
+				href="https://github.com/realdonald1994/SSM_TravleManagement_System">realdonald1994</a>.
 			</strong> All rights reserved.
 		</footer>
 		<!-- 底部导航 /-->
