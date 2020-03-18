@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * application layer interface
+ * product
  */
 public interface ProductService {
     /**

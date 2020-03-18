@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * application layer: implementation
+ * product service
  */
 @Service
 @Transactional

@@ -7,9 +7,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>ITCAST - AdminLTE2定制版</title>
-<meta name="description" content="AdminLTE2定制版">
-<meta name="keywords" content="AdminLTE2定制版">
+<title>TravelManagement</title>
+<meta name="description" content="TravelManagement">
+<meta name="keywords" content="TravelManagement">
 
 <!-- Tell the browser to be responsive to screen width -->
 <meta
@@ -130,32 +130,32 @@
 
 	<div class="wrapper">
 
-		<!-- 页面头部 -->
+		<!-- header -->
 		<jsp:include page="/pages/header.jsp"></jsp:include>
-			<!-- 页面头部 /-->
+			<!-- header /-->
 
-		<!-- 导航侧栏 -->
+		<!-- sidebar -->
 		<jsp:include page="/pages/aside.jsp"></jsp:include>
-		<!-- 导航侧栏 /-->
+		<!-- sidebar /-->
 
-		<!-- 内容区域 -->
+		<!-- content -->
 		<div class="content-wrapper">
 
 			<img src="${pageContext.request.contextPath}/img/center.jpg"
 				width="100%" height="100%" />
 
 		</div>
-		<!-- 内容区域 /-->
+		<!-- content /-->
 
-		<!-- 底部导航 -->
+		<!-- footer -->
 		<footer class="main-footer">
 		<div class="pull-right hidden-xs">
 			<b>Version</b> 1.0.8
 		</div>
-		<strong>Copyright &copy; 2014-2017 <a
-			href="http://www.itcast.cn">研究院研发部</a>.
+		<strong>Copyright &copy; 2020 <a
+			href="https://github.com/realdonald1994/SSM_TravleManagement_System">realdonald1994</a>.
 		</strong> All rights reserved. </footer>
-		<!-- 底部导航 /-->
+		<!-- footer /-->
 
 	</div>
 
