@@ -2,6 +2,7 @@
 ### spring+springmvc+mybatis+AdminLTE+PageHelper ###
 ### AdminLTE github: [AdminLTE](https://github.com/ColorlibHQ/AdminLTE) ###
 ### PageHelper github: [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) ###
+### Spring Security: [Spring Security](https://spring.io/projects/spring-security) ###
 # 1. System demo #
 
 # 2. Technical framework #
@@ -16,7 +17,7 @@
 - **Spring MVC**
 - **MyBatis**
 ### 2.3. Authority Framework ###
-- **Spring security**
+- **Spring Security**
 ### 2.4. Database and connection pool ###
 - **MySQL**
 - **JdbcTemplate**
