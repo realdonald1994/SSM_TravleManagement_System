@@ -27,11 +27,11 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="all-admin-index.html"><b>ITCAST</b>后台管理系统</a>
+			<a href="all-admin-index.html"><b>Travel</b>Management</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">登录系统</p>
+			<p class="login-box-msg">Log In System</p>
 
 			<form action="${pageContext.request.contextPath}/login.do" method="post">
 				<div class="form-group has-feedback">
@@ -58,7 +58,7 @@
 				</div>
 			</form>
 
-			<a href="#">忘记密码</a><br>
+			<a href="#">Forgot Password?</a><br>
 
 
 		</div>

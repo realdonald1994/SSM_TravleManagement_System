@@ -35,11 +35,11 @@
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
-								<a href="#" class="btn btn-default btn-flat">修改密码</a>
+								<a href="#" class="btn btn-default btn-flat">Change Password</a>
 							</div>
 							<div class="pull-right">
 								<a href="${pageContext.request.contextPath}/logout.do"
-									class="btn btn-default btn-flat">注销</a>
+									class="btn btn-default btn-flat">Log out</a>
 							</div>
 						</li>
 					</ul></li>

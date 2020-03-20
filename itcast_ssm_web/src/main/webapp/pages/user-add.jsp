@@ -6,9 +6,9 @@
 <!-- 页面meta -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>数据 - AdminLTE2定制版</title>
-<meta name="description" content="AdminLTE2定制版">
-<meta name="keywords" content="AdminLTE2定制版">
+<title>User - TravelManagement</title>
+<meta name="description" content="TravelManagement">
+<meta name="keywords" content="TravelManagement">
 
 <!-- Tell the browser to be responsive to screen width -->
 <meta
@@ -79,14 +79,14 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 			<h1>
-				用户管理 <small>用户表单</small>
+				User Management <small>User Form</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
-						class="fa fa-dashboard"></i> 首页</a></li>
+						class="fa fa-dashboard"></i> Home</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
-				<li class="active">用户表单</li>
+					href="${pageContext.request.contextPath}/user/findAll.do">User Management</a></li>
+				<li class="active">User Form</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
@@ -97,35 +97,35 @@
 				<section class="content"> <!--产品信息-->
 
 				<div class="panel panel-default">
-					<div class="panel-heading">用户信息</div>
+					<div class="panel-heading">User Information</div>
 					<div class="row data-type">
 
-						<div class="col-md-2 title">用户名称</div>
+						<div class="col-md-2 title">Username</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="username"
-								placeholder="用户名称" value="">
+								placeholder="username" value="">
 						</div>
-						<div class="col-md-2 title">密码</div>
+						<div class="col-md-2 title">Password</div>
 						<div class="col-md-4 data">
 							<input type="password" class="form-control" name="password"
-								placeholder="密码" value="">
+								placeholder="password" value="">
 						</div>
-						<div class="col-md-2 title">邮箱</div>
+						<div class="col-md-2 title">Email</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="email"
-								placeholder="邮箱" value="">
+								placeholder="email" value="">
 						</div>
-						<div class="col-md-2 title">联系电话</div>
+						<div class="col-md-2 title">Phone Number</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="phoneNum"
-								placeholder="联系电话" value="">
+								placeholder="phone number" value="">
 						</div>
-						<div class="col-md-2 title">用户状态</div>
+						<div class="col-md-2 title">Active Status</div>
 						<div class="col-md-4 data">
 							<select class="form-control select2" style="width: 100%"
 								name="status">
-								<option value="0" selected="selected">关闭</option>
-								<option value="1">开启</option>
+								<option value="0" selected="selected">Inactivated</option>
+								<option value="1">Activated</option>
 							</select>
 						</div>
 
@@ -133,9 +133,9 @@
 				</div>
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
-					<button type="submit" class="btn bg-maroon">保存</button>
+					<button type="submit" class="btn bg-maroon">Save</button>
 					<button type="button" class="btn bg-default"
-						onclick="history.back(-1);">返回</button>
+						onclick="history.back(-1);">Back</button>
 				</div>
 				<!--工具栏/--> </section>
 				<!-- 正文区域 /-->
@@ -148,8 +148,8 @@
 		<div class="pull-right hidden-xs">
 			<b>Version</b> 1.0.8
 		</div>
-		<strong>Copyright &copy; 2014-2017 <a
-			href="http://www.itcast.cn">研究院研发部</a>.
+		<strong>Copyright &copy; 2020 <a
+			href="https://github.com/realdonald1994/SSM_TravleManagement_System">realdonald1994</a>.
 		</strong> All rights reserved. </footer>
 		<!-- 底部导航 /-->
 

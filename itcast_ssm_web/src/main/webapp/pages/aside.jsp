@@ -12,7 +12,7 @@
 			</div>
 			<div class="pull-left info">
 				<p>xxx</p>
-				<a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+				<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 			</div>
 		</div>
 
