@@ -1,16 +1,15 @@
 package cn.itcast.ssm.dao;
 
 import cn.itcast.ssm.domain.Role;
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * data layer roleDao
  */
+@Repository
 public interface RoleDao {
     /**
      * search role by user id
@@ -27,4 +26,18 @@ public interface RoleDao {
     })
     List<Role> findRoleByUserId(int userId) throws Exception;
 
+    /**
+     * search All roles
+     * @return
+     * @throws Exception
+     */
+    @Select("select * from role")
+    List<Role> findAll() throws Exception;
+
+    /**
+     * save role
+     * @param role
+     */
+    @Insert("insert into role(roleName,roleDesc) value(#{roleName},#{roleDesc})")
+    void save(Role role) throws Exception;
 }
