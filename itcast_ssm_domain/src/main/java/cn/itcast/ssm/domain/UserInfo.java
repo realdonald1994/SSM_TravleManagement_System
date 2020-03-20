@@ -11,10 +11,19 @@ public class UserInfo implements Serializable {
     private String username;
     private String email;
     private String password;
+    private String phoneNum;
     private Integer status;
-    private String statusStr;
+    private String statusStr;//0:inactivated 1:activated
     private List<Role> roles;
 
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
 
     public Integer getId() {
         return id;
@@ -57,6 +66,13 @@ public class UserInfo implements Serializable {
     }
 
     public String getStatusStr() {
+        if(status!=null){
+            if(status==0){
+                statusStr="Inactivated";
+            }else if(status==1){
+                statusStr="Activated";
+            }
+        }
         return statusStr;
     }
 
