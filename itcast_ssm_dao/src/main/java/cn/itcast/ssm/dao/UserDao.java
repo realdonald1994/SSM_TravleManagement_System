@@ -1,5 +1,6 @@
 package cn.itcast.ssm.dao;
 
+import cn.itcast.ssm.domain.Role;
 import cn.itcast.ssm.domain.UserInfo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -54,4 +55,22 @@ public interface UserDao {
             @Result(property = "roles",column = "id",javaType = java.util.List.class,many = @Many(select = "cn.itcast.ssm.dao.RoleDao.findRoleByUserId")),
     })
     UserInfo findById(int userId) throws Exception;
+
+
+    /**
+     * saerch available role by useId
+     * @param userId
+     * @return
+     */
+    @Select("select * from role where id not in (select roleId from users_role where userId=#{userId})")
+    List<Role> findOtherRoles(int userId) throws Exception;
+
+    /**
+     * add role to user
+     * @param userId
+     * @param roleId
+     * @throws Exception
+     */
+    @Insert("insert into users_role (userId,roleId) values(#{userId},#{roleId})")
+    void addRoleToUser(@Param("userId") int userId, @Param("roleId") int roleId) throws Exception;
 }

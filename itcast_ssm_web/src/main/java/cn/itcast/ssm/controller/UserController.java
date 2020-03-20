@@ -1,5 +1,6 @@
 package cn.itcast.ssm.controller;
 
+import cn.itcast.ssm.domain.Role;
 import cn.itcast.ssm.domain.UserInfo;
 import cn.itcast.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,36 @@ public class UserController {
         mv.addObject("user",userInfo);
         mv.setViewName("user-show");
         return mv;
+    }
+
+    /**
+     * search available roles by userId
+     * @param userId
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/findUserByIdAndAllRole.do")
+    public ModelAndView findUserByIdAndAllRole(@RequestParam(name = "id",required = true)int userId) throws Exception{
+        ModelAndView mv = new ModelAndView();
+        // search user by id
+        UserInfo userInfo = userService.findById(userId);
+        //search available roles by userid
+        List<Role> otherRoles = userService.findOtherRoles(userId);
+        mv.addObject("user",userInfo);
+        mv.addObject("roleList",otherRoles);
+        mv.setViewName("user-role-add");
+        return mv;
+    }
+
+    /**
+     * add role to user
+     * @param userId
+     * @param roleIds
+     * @return
+     */
+    @RequestMapping("/addRoleToUser.do")
+    public String addRoleToUser(@RequestParam(name = "userId",required = true) int userId,@RequestParam(name = "ids",required = true) int[] roleIds) throws Exception {
+        userService.addRoleToUser(userId,roleIds);
+        return "redirect:findAll.do";
     }
 }

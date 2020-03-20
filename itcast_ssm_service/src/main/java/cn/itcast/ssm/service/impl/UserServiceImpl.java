@@ -66,6 +66,11 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
+    /**
+     * save user
+     * @param userInfo
+     * @throws Exception
+     */
     @Override
     public void save(UserInfo userInfo) throws Exception {
         //password Encryption
@@ -73,8 +78,38 @@ public class UserServiceImpl implements UserService {
         userDao.save(userInfo);
     }
 
+    /**
+     * search user by id
+     * @param userId
+     * @return
+     * @throws Exception
+     */
     @Override
     public UserInfo findById(int userId) throws Exception {
         return userDao.findById(userId);
+    }
+
+    /**
+     * search available roles by uerid
+     * @param userId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Role> findOtherRoles(int userId) throws Exception {
+        return userDao.findOtherRoles(userId);
+    }
+
+    /**
+     * add role to user
+     * @param userId
+     * @param roleIds
+     * @throws Exception
+     */
+    @Override
+    public void addRoleToUser(int userId, int[] roleIds) throws Exception {
+        for(int roleId:roleIds){
+            userDao.addRoleToUser(userId,roleId);
+        }
     }
 }
