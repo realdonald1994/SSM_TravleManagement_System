@@ -17,7 +17,7 @@
 
 
 
-    <title>Permission Denied - TravelManagement</title>
+    <title>Not Found - TravelManagement</title>
     <meta name="description" content="TravelManagement">
     <meta name="keywords" content="TravelManagement">
 
@@ -144,12 +144,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                403 Permission Denied
+                404 Not Found
             </h1>
 
             <ol class="breadcrumb">
-                <li><a href="${pageContext.request.contextPath}/login.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">403 Permission Denied</li>
+                <li><a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">404 Not Found</li>
             </ol>
 
         </section>
@@ -157,15 +157,26 @@
         <!-- Main content -->
         <section class="content">
             <div class="error-page">
-                <h2 class="headline text-green"> 403</h2>
+                <h2 class="headline text-yellow"> 404</h2>
 
                 <div class="error-content">
-                    <h3><i class="fa fa-warning text-red"></i> Oops! You do not have sufficient permissions.</h3>
+                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
 
                     <p>
-                        You do not have sufficient permissions, you can  <a href="${pageContext.request.contextPath}/login.jsp">return to the login page</a>
+                        Did not find the page you requested, you can <a href="${pageContext.request.contextPath}/index.jsp">return to the background home page</a> or search by query
                     </p>
 
+                    <form class="search-form">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="search">
+
+                            <div class="input-group-btn">
+                                <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.input-group -->
+                    </form>
                 </div>
                 <!-- /.error-content -->
             </div>
@@ -255,7 +266,7 @@
 
 
     $(document).ready(function() {
-        setSidebarActive("admin-500");
+        setSidebarActive("admin-404");
     });
 </script>
 </body>

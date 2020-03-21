@@ -12,7 +12,7 @@
 
 
 
-<title>Data - TravelManagement</title>
+<title>Product - TravelManagement</title>
 <meta name="description" content="TravelManagement">
 <meta name="keywords" content="TravelManagement">
 
@@ -166,12 +166,12 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 				<h1>
-					Data <small>list</small>
+					Product <small>List</small>
 				</h1>
 				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-					<li><a href="#">Data</a></li>
-					<li class="active">list</li>
+					<li><a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/product/findAll.do">Product Management</a></li>
+					<li class="active">Porduct List</li>
 				</ol>
 			</section>
 			<!-- 内容头部 /-->
@@ -182,7 +182,7 @@
 				<!-- .box-body -->
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<h3 class="box-title">list</h3>
+						<h3 class="box-title">List</h3>
 					</div>
 
 					<div class="box-body">
@@ -196,19 +196,19 @@
 									<div class="btn-group">
 										<button type="button" class="btn btn-default" title="新建"
 											onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
-											<i class="fa fa-file-o"></i> add
+											<i class="fa fa-file-o"></i> Add
 										</button>
 										<button type="button" class="btn btn-default" title="删除">
-											<i class="fa fa-trash-o"></i> delete
+											<i class="fa fa-trash-o"></i> Delete
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
-											<i class="fa fa-check"></i> open
+											<i class="fa fa-check"></i> Open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
-											<i class="fa fa-ban"></i> close
+											<i class="fa fa-ban"></i> Close
 										</button>
 										<button type="button" class="btn btn-default" title="刷新">
-											<i class="fa fa-refresh"></i> refresh
+											<i class="fa fa-refresh"></i> Refresh
 										</button>
 									</div>
 								</div>
@@ -231,14 +231,14 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">product number</th>
-										<th class="sorting_asc sorting_asc_disabled">product name</th>
-										<th class="sorting_desc sorting_desc_disabled">departure city</th>
-										<th class="sorting">departure time</th>
-										<th class="text-center sorting">price</th>
-										<th class="sorting">product description</th>
-										<th class="text-center sorting">status</th>
-										<th class="text-center">operating</th>
+										<th class="sorting_desc">Product Number</th>
+										<th class="sorting_asc sorting_asc_disabled">Product Name</th>
+										<th class="sorting_desc sorting_desc_disabled">Departure City</th>
+										<th class="sorting">Departure Time</th>
+										<th class="text-center sorting">Price</th>
+										<th class="sorting">Product Description</th>
+										<th class="text-center sorting">Status</th>
+										<th class="text-center">Operating</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -257,9 +257,8 @@
 											<td>${product.productDesc }</td>
 											<td class="text-center">${product.productStatusStr }</td>
 											<td class="text-center">
-												<button type="button" class="btn bg-olive btn-xs">order</button>
-												<button type="button" class="btn bg-olive btn-xs">details</button>
-												<button type="button" class="btn bg-olive btn-xs">edit</button>
+												<button type="button" class="btn bg-olive btn-xs">Detail</button>
+												<button type="button" class="btn bg-olive btn-xs">Edit</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -282,19 +281,19 @@
 								<div class="form-group form-inline">
 									<div class="btn-group">
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
-											<i class="fa fa-file-o"></i> add
+											<i class="fa fa-file-o"></i> Add
 										</button>
 										<button type="button" class="btn btn-default" title="删除">
-											<i class="fa fa-trash-o"></i> delete
+											<i class="fa fa-trash-o"></i> Delete
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
-											<i class="fa fa-check"></i> open
+											<i class="fa fa-check"></i> Open
 										</button>
 										<button type="button" class="btn btn-default" title="屏蔽">
-											<i class="fa fa-ban"></i> close
+											<i class="fa fa-ban"></i> Close
 										</button>
 										<button type="button" class="btn btn-default" title="刷新">
-											<i class="fa fa-refresh"></i> refresh
+											<i class="fa fa-refresh"></i> Refresh
 										</button>
 									</div>
 								</div>
@@ -327,7 +326,7 @@
 									<option>3</option>
 									<option>4</option>
 									<option>5</option>
-								</select> per page
+								</select> records per page
 							</div>
 						</div>
 
