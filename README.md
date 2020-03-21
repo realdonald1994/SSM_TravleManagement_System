@@ -4,7 +4,7 @@
 ### PageHelper github: [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) ###
 ### Spring Security: [Spring Security](https://spring.io/projects/spring-security) ###
 # 1. System demo #
-
+![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/Capture.PNG)
 # 2. Technical framework #
 ### 2.1. Development environment ###
 - **JDK1.8**
