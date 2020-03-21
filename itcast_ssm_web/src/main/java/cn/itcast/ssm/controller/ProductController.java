@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 /**
@@ -26,8 +27,9 @@ public class ProductController {
      * @throws Exception
      */
     @RequestMapping("/findAll.do")
+    @RolesAllowed("ADMIN")
     public ModelAndView findAll(@RequestParam(name = "page",required = true,defaultValue = "1")int page,
-                                @RequestParam(name = "size",required = true,defaultValue = "1")int size) throws Exception {
+                                @RequestParam(name = "size",required = true,defaultValue = "5")int size) throws Exception {
         ModelAndView mv = new ModelAndView();
         List<Product> products = productService.findAll(page,size);
         PageInfo pageInfo = new PageInfo(products);
