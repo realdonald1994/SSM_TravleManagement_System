@@ -37,7 +37,7 @@
 					<li id="system-setting">
 						<security:authorize access="hasRole('ROLE_ADMIN')">
 							<a
-									href="${pageContext.request.contextPath}/user/findAll.do"> <i
+									href="${pageContext.request.contextPath}/user/findAll.do?page=1&size=5"> <i
 									class="fa fa-circle-o"></i> User Management
 							</a>
 						</security:authorize>
@@ -51,7 +51,7 @@
 							<i class="fa fa-circle-o"></i> Authority Management
 					</a></li>
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/sysLog/findAll.do"> <i
+						href="${pageContext.request.contextPath}/sysLog/findAll.do?page=1&size=15"> <i
 							class="fa fa-circle-o"></i> Log Management
 					</a></li>
 				</ul></li>

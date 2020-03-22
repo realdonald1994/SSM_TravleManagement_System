@@ -72,7 +72,7 @@ public class LogAop {
 
         //url
         String url = "";
-        if (aClass != null && method != null && aClass != LogAop.class) {
+        if (aClass != null && method != null && aClass != LogAop.class && aClass!=SysLogController.class) {
             //get RequestMapping of class
             RequestMapping classAnnotation = (RequestMapping) aClass.getAnnotation(RequestMapping.class);
             if (classAnnotation != null) {
