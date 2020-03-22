@@ -27,7 +27,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAll.do")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView findAll(@RequestParam(name = "page",required = true,defaultValue = "1") Integer page,
                                 @RequestParam(name = "size",required = true,defaultValue = "5") Integer size) throws Exception {
         ModelAndView mv = new ModelAndView();
@@ -56,7 +56,7 @@ public class UserController {
      * @throws Exception
      */
     @RequestMapping("/findById.do")
-    public ModelAndView findById(@RequestParam(name = "id",required = true)int userId) throws Exception{
+    public ModelAndView findById(@RequestParam(name = "id",required = true)Integer userId) throws Exception{
         ModelAndView mv = new ModelAndView();
         UserInfo userInfo = userService.findById(userId);
         mv.addObject("user",userInfo);
@@ -71,7 +71,7 @@ public class UserController {
      * @throws Exception
      */
     @RequestMapping("/findUserByIdAndAllRole.do")
-    public ModelAndView findUserByIdAndAllRole(@RequestParam(name = "id",required = true)int userId) throws Exception{
+    public ModelAndView findUserByIdAndAllRole(@RequestParam(name = "id",required = true)Integer userId) throws Exception{
         ModelAndView mv = new ModelAndView();
         // search user by id
         UserInfo userInfo = userService.findById(userId);
@@ -90,7 +90,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/addRoleToUser.do")
-    public String addRoleToUser(@RequestParam(name = "userId",required = true) int userId,@RequestParam(name = "ids",required = true) int[] roleIds) throws Exception {
+    public String addRoleToUser(@RequestParam(name = "userId",required = true) Integer userId,@RequestParam(name = "ids",required = true) Integer[] roleIds) throws Exception {
         userService.addRoleToUser(userId,roleIds);
         return "redirect:findAll.do?page=1&size=5";
     }

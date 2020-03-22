@@ -15,11 +15,11 @@ public interface UserService extends UserDetailsService {
 
     void save(UserInfo userInfo) throws Exception;
 
-    UserInfo findById(int userId) throws Exception;
+    UserInfo findById(Integer userId) throws Exception;
 
-    List<Role> findOtherRoles(int userId) throws Exception;
+    List<Role> findOtherRoles(Integer userId) throws Exception;
 
-    void addRoleToUser(int userId, int[] roleIds) throws Exception;
+    void addRoleToUser(Integer userId, Integer[] roleIds) throws Exception;
 
     void delete(Integer userId) throws Exception;
 

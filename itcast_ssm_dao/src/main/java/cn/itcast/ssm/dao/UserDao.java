@@ -54,7 +54,7 @@ public interface UserDao {
             @Result(property = "status",column = "status"),
             @Result(property = "roles",column = "id",javaType = java.util.List.class,many = @Many(select = "cn.itcast.ssm.dao.RoleDao.findRoleByUserId")),
     })
-    UserInfo findById(int userId) throws Exception;
+    UserInfo findById(Integer userId) throws Exception;
 
 
     /**
@@ -63,7 +63,7 @@ public interface UserDao {
      * @return
      */
     @Select("select * from role where id not in (select roleId from users_role where userId=#{userId})")
-    List<Role> findOtherRoles(int userId) throws Exception;
+    List<Role> findOtherRoles(Integer userId) throws Exception;
 
     /**
      * add role to user
@@ -72,7 +72,7 @@ public interface UserDao {
      * @throws Exception
      */
     @Insert("insert into users_role (userId,roleId) values(#{userId},#{roleId})")
-    void addRoleToUser(@Param("userId") int userId, @Param("roleId") int roleId) throws Exception;
+    void addRoleToUser(@Param("userId") Integer userId, @Param("roleId") Integer roleId) throws Exception;
 
     /**
      * delete user

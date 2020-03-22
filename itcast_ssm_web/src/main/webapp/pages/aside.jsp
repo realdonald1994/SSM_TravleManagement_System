@@ -35,12 +35,10 @@
 				<ul class="treeview-menu">
 
 					<li id="system-setting">
-						<security:authorize access="hasRole('ROLE_ADMIN')">
-							<a
-									href="${pageContext.request.contextPath}/user/findAll.do?page=1&size=5"> <i
-									class="fa fa-circle-o"></i> User Management
-							</a>
-						</security:authorize>
+						<a
+								href="${pageContext.request.contextPath}/user/findAll.do?page=1&size=5"> <i
+								class="fa fa-circle-o"></i> User Management
+						</a>
 					</li>
 					<li id="system-setting"><a
 						href="${pageContext.request.contextPath}/role/findAll.do"> <i
@@ -50,10 +48,12 @@
 						href="${pageContext.request.contextPath}/permission/findAll.do">
 							<i class="fa fa-circle-o"></i> Authority Management
 					</a></li>
-					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/sysLog/findAll.do?page=1&size=15"> <i
-							class="fa fa-circle-o"></i> Log Management
-					</a></li>
+					<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li id="system-setting"><a
+							href="${pageContext.request.contextPath}/sysLog/findAll.do?page=1&size=15"> <i
+								class="fa fa-circle-o"></i> Log Management
+						</a></li>
+					</security:authorize>
 				</ul></li>
 			<li class="treeview"><a href="#"> <i class="fa fa-cube"></i>
 					<span>Database</span> <span class="pull-right-container"> <i

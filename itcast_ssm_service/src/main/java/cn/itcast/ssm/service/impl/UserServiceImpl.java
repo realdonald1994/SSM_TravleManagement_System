@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
      * @throws Exception
      */
     @Override
-    public UserInfo findById(int userId) throws Exception {
+    public UserInfo findById(Integer userId) throws Exception {
         return userDao.findById(userId);
     }
 
@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
      * @throws Exception
      */
     @Override
-    public List<Role> findOtherRoles(int userId) throws Exception {
+    public List<Role> findOtherRoles(Integer userId) throws Exception {
         return userDao.findOtherRoles(userId);
     }
 
@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService {
      * @throws Exception
      */
     @Override
-    public void addRoleToUser(int userId, int[] roleIds) throws Exception {
+    public void addRoleToUser(Integer userId, Integer[] roleIds) throws Exception {
         for(int roleId:roleIds){
             userDao.addRoleToUser(userId,roleId);
         }
