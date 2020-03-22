@@ -26,7 +26,7 @@ public class OrdersServiceImpl implements OrdersService {
      * @throws Exception
      */
     @Override
-    public List<Orders> findAll(int page,int size) throws Exception {
+    public List<Orders> findAll(Integer page,Integer size) throws Exception {
         //pageNum. pageSize
         PageHelper.startPage(page,size);
         return ordersDao.findAll();

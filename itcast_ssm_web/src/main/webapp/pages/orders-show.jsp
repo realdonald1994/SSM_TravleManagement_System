@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>TravelManagement</title>
+<title>Order - TravelManagement</title>
 <meta name="description" content="TravelManagement">
 <meta name="keywords" content="TravelManagement">
 

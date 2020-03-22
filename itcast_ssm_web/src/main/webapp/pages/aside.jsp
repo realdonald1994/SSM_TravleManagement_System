@@ -52,7 +52,7 @@
 					</a></li>
 					<li id="system-setting"><a
 						href="${pageContext.request.contextPath}/sysLog/findAll.do"> <i
-							class="fa fa-circle-o"></i> Log
+							class="fa fa-circle-o"></i> Log Management
 					</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <i class="fa fa-cube"></i>

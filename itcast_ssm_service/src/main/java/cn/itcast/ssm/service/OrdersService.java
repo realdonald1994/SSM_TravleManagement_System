@@ -8,7 +8,7 @@ import java.util.List;
  * orders
  */
 public interface OrdersService {
-    List<Orders> findAll(int page,int size)throws Exception;
+    List<Orders> findAll(Integer page,Integer size)throws Exception;
 
     Orders findById(int ordersId) throws Exception;
 }

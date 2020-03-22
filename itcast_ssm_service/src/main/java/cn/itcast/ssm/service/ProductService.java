@@ -14,7 +14,7 @@ public interface ProductService {
      * @return
      * @throws Exception
      */
-    List<Product> findAll(int page,int size) throws Exception;
+    List<Product> findAll(Integer page,Integer size) throws Exception;
 
     /**
      * save product
