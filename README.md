@@ -5,9 +5,9 @@
 ### Spring Security: [Spring Security](https://spring.io/projects/spring-security) ###
 # 1. System demo #
 ### 1.1 User Management ###
-![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/Sketch.png)
+![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/User.png)
 ### 1.2 Product Management ###
-![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/Capture.PNG)
+![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/Product.png)
 # 2. Technical framework #
 ### 2.1. Development environment ###
 - **JDK1.8**
