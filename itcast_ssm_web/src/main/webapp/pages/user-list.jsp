@@ -111,7 +111,9 @@
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/user-add.jsp'">
 											<i class="fa fa-file-o"></i> Add
 										</button>
-										
+										<button type="button" class="btn btn-default" title="删除" onclick="deleteAll()">
+											<i class="fa fa-trash-o"></i> Delete
+										</button>
 										<button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();">
 											<i class="fa fa-refresh"></i> Refresh
 										</button>
@@ -147,7 +149,7 @@
 
 									<c:forEach items="${pageInfo.list}" var="user">
 										<tr>
-											<td><input name="ids" type="checkbox"></td>
+											<td><input name="ids" value="${user.id}" type="checkbox"></td>
 											<td>${user.id}</td>
 											<td>${user.username}</td>
 											<td>${user.email}</td>
@@ -156,8 +158,8 @@
 											<td class="text-center">
 												<a href="${pageContext.request.contextPath}/user/findById.do?id=${user.id}" class="btn bg-olive btn-xs">Detail</a>
 												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${user.id}" class="btn bg-olive btn-xs">Add Role</a>
-												<a href="#" class="btn bg-olive btn-xs">Edit</a>
-												<a href="#" class="btn bg-olive btn-xs">Delete</a>
+												<a href="${pageContext.request.contextPath}/user/updateById.do?id=${user.id}" class="btn bg-olive btn-xs">Edit</a>
+												<a href="${pageContext.request.contextPath}/user/delete.do?id=${user.id}" class="btn bg-olive btn-xs">Delete</a>
 
 											</td>
 										</tr>
@@ -283,6 +285,34 @@
 		<script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
 		<script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
 		<script>
+
+			function deleteAll() {
+				const checkedNum = $("input[name='ids']:checked").length;
+				if(checkedNum==0){
+					alert("Please select at least one item to delete")
+					return;
+				}
+				let itemList;
+				if(confirm("Are you sure you want to delete the selected items?")){
+					itemList = new Array();
+					$("input[name='ids']:checked").each(function () {
+						itemList.push($(this).val());
+					});
+				}
+
+				$.ajax({
+					type:"post",
+					url:"${pageContext.request.contextPath}/user/batchDelete.do",
+					data:{itemList:itemList.toString()},
+					success:function () {
+						alert("Successfully Deleted");
+						location.reload();
+					},
+					error:function () {
+						alert("Failed to delete");
+					}
+				});
+			}
 			function changePageSize() {
 				//获取下拉框的值
 				let pageSize = $("#changePageSize").val();

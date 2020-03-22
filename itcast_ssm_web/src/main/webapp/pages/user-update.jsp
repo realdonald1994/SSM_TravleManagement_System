@@ -6,7 +6,7 @@
 <!-- 页面meta -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Product - TravelManagement</title>
+<title>User - TravelManagement</title>
 <meta name="description" content="TravelManagement">
 <meta name="keywords" content="TravelManagement">
 
@@ -79,77 +79,56 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 			<h1>
-				Product Management <small>Product Update</small>
+				User Management <small>User Update</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> Home</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/product/findAll.do">Product Management</a></li>
-				<li class="active">Product Update</li>
+					href="${pageContext.request.contextPath}/user/findAll.do">User Management</a></li>
+				<li class="active">User Update</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/product/update.do"
+			<form action="${pageContext.request.contextPath}/user/update.do"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
+
 				<div class="panel panel-default">
-					<div class="panel-heading">Product Information</div>
+					<div class="panel-heading">User Information</div>
 					<div class="row data-type">
-
-						<div class="col-md-4 data" style="display: none;">
-							<input type="text" class="form-control" name="id"
-								   value="${product.id}" readonly="readonly">
+						<div class="col-md-4 data" style="display: none">
+							<input type="text" class="form-control" name="id" value="${user.id}">
 						</div>
-						<div class="col-md-2 title">Product Number</div>
+						<div class="col-md-2 title">Username</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="productNum"
-								 value="${product.productNum}" readonly="readonly">
+							<input type="text" class="form-control" name="username"
+								placeholder="${user.username}" value="">
 						</div>
-						<div class="col-md-2 title">Product Name</div>
+						<div class="col-md-2 title">Password</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="productName"
-								placeholder="${product.productName}" value="">
+							<input type="password" class="form-control" name="password"
+								placeholder="password" value="">
 						</div>
-						<div class="col-md-2 title">Departure Time</div>
+						<div class="col-md-2 title">Email</div>
 						<div class="col-md-4 data">
-							<div class="input-group date">
-								<div class="input-group-addon">
-									<i class="fa fa-calendar"></i>
-								</div>
-								<input type="text" class="form-control pull-right"
-									id="datepicker-a3" name="departureTime">
-							</div>
+							<input type="text" class="form-control" name="email"
+								placeholder="${user.email}" value="">
 						</div>
-
-
-						<div class="col-md-2 title">Departure City</div>
+						<div class="col-md-2 title">Phone Number</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="cityName"
-								placeholder="${product.cityName}" value="">
+							<input type="text" class="form-control" name="phoneNum"
+								placeholder="${user.phoneNum}" value="">
 						</div>
-
-						<div class="col-md-2 title">Product Price</div>
-						<div class="col-md-4 data">
-							<input type="text" class="form-control" placeholder="Product Price"
-								name="${product.productPrice}" value="">
-						</div>
-
-						<div class="col-md-2 title">Product Status</div>
+						<div class="col-md-2 title">Active Status</div>
 						<div class="col-md-4 data">
 							<select class="form-control select2" style="width: 100%"
-								name="productStatus">
-								<option value="0" selected="selected">close</option>
-								<option value="1">open</option>
+								name="status">
+								<option value="0" selected="selected">Inactivated</option>
+								<option value="1">Activated</option>
 							</select>
-						</div>
-
-						<div class="col-md-2 title rowHeight2x">Other Information</div>
-						<div class="col-md-10 data rowHeight2x">
-							<textarea class="form-control" rows="3" placeholder="Other Information"
-								name="${product.productDesc}"></textarea>
 						</div>
 
 					</div>
@@ -284,25 +263,6 @@
 				liObj.addClass("active");
 			}
 		}
-
-		$(document).ready(function() {
-			$('#datepicker-a3').datetimepicker({
-				format : "yyyy-mm-dd hh:ii",
-				autoclose : true,
-				todayBtn : true,
-				language : "zh-CN"
-			});
-		});
-
-		$(document).ready(function() {
-			// 激活导航位置
-			setSidebarActive("order-manage");
-			$("#datepicker-a3").datetimepicker({
-				format : "yyyy-mm-dd hh:ii",
-
-			});
-
-		});
 	</script>
 
 

@@ -73,4 +73,19 @@ public interface UserDao {
      */
     @Insert("insert into users_role (userId,roleId) values(#{userId},#{roleId})")
     void addRoleToUser(@Param("userId") int userId, @Param("roleId") int roleId) throws Exception;
+
+    /**
+     * delete user
+     * @param userId
+     * @throws Exception
+     */
+    @Delete("delete from users where id=#{userId}")
+    void delete(Integer userId) throws Exception;
+
+    /**
+     * update User
+     * @param userInfo
+     */
+    @Update("update users set email=#{email},username=#{username},password=#{password},phoneNum=#{phoneNum},status=#{status} where id=#{id}")
+    void update(UserInfo userInfo) throws Exception;
 }

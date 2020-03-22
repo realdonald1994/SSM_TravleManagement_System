@@ -114,4 +114,37 @@ public class UserServiceImpl implements UserService {
             userDao.addRoleToUser(userId,roleId);
         }
     }
+
+    /**
+     * delete user
+     * @param userId
+     * @throws Exception
+     */
+    @Override
+    public void delete(Integer userId) throws Exception {
+        userDao.delete(userId);
+    }
+
+    /**
+     * update user
+     * @param userInfo
+     * @throws Exception
+     */
+    @Override
+    public void update(UserInfo userInfo) throws Exception {
+        userInfo.setPassword(BCryptPasswordEncoderUtils.encodingPassword(userInfo.getPassword()));
+        userDao.update(userInfo);
+    }
+
+    /**
+     * batch delete users
+     * @param ids
+     * @throws Exception
+     */
+    @Override
+    public void batchDelete(List<Integer> ids) throws Exception {
+        for(Integer id:ids){
+            userDao.delete(id);
+        }
+    }
 }

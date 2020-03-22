@@ -20,4 +20,10 @@ public interface UserService extends UserDetailsService {
     List<Role> findOtherRoles(int userId) throws Exception;
 
     void addRoleToUser(int userId, int[] roleIds) throws Exception;
+
+    void delete(Integer userId) throws Exception;
+
+    void update(UserInfo userInfo) throws Exception;
+
+    void batchDelete(List<Integer> ids) throws Exception;
 }
