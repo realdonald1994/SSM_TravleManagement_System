@@ -156,6 +156,9 @@
 											<td class="text-center">
 												<a href="${pageContext.request.contextPath}/user/findById.do?id=${user.id}" class="btn bg-olive btn-xs">Detail</a>
 												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${user.id}" class="btn bg-olive btn-xs">Add Role</a>
+												<a href="#" class="btn bg-olive btn-xs">Edit</a>
+												<a href="#" class="btn bg-olive btn-xs">Delete</a>
+
 											</td>
 										</tr>
 									</c:forEach>

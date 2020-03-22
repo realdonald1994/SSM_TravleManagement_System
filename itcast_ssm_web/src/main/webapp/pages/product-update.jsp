@@ -79,31 +79,34 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 			<h1>
-				Product Management <small>Product Form</small>
+				Product Management <small>Product Update</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> Home</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/product/findAll.do">Product Management</a></li>
-				<li class="active">Product Form</li>
+				<li class="active">Product Update</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/product/save.do"
+			<form action="${pageContext.request.contextPath}/product/update.do"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
-
 				<div class="panel panel-default">
 					<div class="panel-heading">Product Information</div>
 					<div class="row data-type">
 
+						<div class="col-md-4 data" style="display: none;">
+							<input type="text" class="form-control" name="id"
+								   value="${product.id}" readonly="readonly">
+						</div>
 						<div class="col-md-2 title">Product Number</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="productNum"
-								placeholder="Product Number" value="">
+								 value="${product.productNum}" readonly="readonly">
 						</div>
 						<div class="col-md-2 title">Product Name</div>
 						<div class="col-md-4 data">
@@ -153,7 +156,7 @@
 				</div>
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
-					<button type="submit" class="btn bg-maroon">Save</button>
+					<button type="submit" class="btn bg-maroon">Update</button>
 					<button type="button" class="btn bg-default"
 						onclick="history.back(-1);">Back</button>
 				</div>

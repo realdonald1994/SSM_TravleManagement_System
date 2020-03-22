@@ -198,7 +198,7 @@
 											onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
 											<i class="fa fa-file-o"></i> Add
 										</button>
-										<button type="button" class="btn btn-default" title="删除">
+										<button type="button" class="btn btn-default" title="删除" onclick="deleteAll()">
 											<i class="fa fa-trash-o"></i> Delete
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
@@ -207,7 +207,7 @@
 										<button type="button" class="btn btn-default" title="屏蔽">
 											<i class="fa fa-ban"></i> Close
 										</button>
-										<button type="button" class="btn btn-default" title="刷新">
+										<button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();">
 											<i class="fa fa-refresh"></i> Refresh
 										</button>
 									</div>
@@ -247,7 +247,7 @@
 									<c:forEach items="${pageInfo.list}" var="product">
 
 										<tr>
-											<td><input name="ids" type="checkbox"></td>
+											<td><input name="ids" value="${product.id}" type="checkbox"></td>
 											<td>${product.id }</td>
 											<td>${product.productNum }</td>
 											<td>${product.productName }</td>
@@ -258,7 +258,8 @@
 											<td class="text-center">${product.productStatusStr }</td>
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">Detail</button>
-												<button type="button" class="btn bg-olive btn-xs">Edit</button>
+												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/product/findById.do?id=${product.id}'">Edit</button>
+												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/product/delete.do?id=${product.id}'">Delete</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -283,7 +284,7 @@
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/product-add.jsp'">
 											<i class="fa fa-file-o"></i> Add
 										</button>
-										<button type="button" class="btn btn-default" title="删除">
+										<button type="button" class="btn btn-default" title="删除" onclick="deleteAll()">
 											<i class="fa fa-trash-o"></i> Delete
 										</button>
 										<button type="button" class="btn btn-default" title="开启">
@@ -292,7 +293,7 @@
 										<button type="button" class="btn btn-default" title="屏蔽">
 											<i class="fa fa-ban"></i> Close
 										</button>
-										<button type="button" class="btn btn-default" title="刷新">
+										<button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();">
 											<i class="fa fa-refresh"></i> Refresh
 										</button>
 									</div>
@@ -320,7 +321,7 @@
 							<div class="form-group form-inline">
 								Total <b>${pageInfo.pages} </b>pages and <b>${pageInfo.total} </b>records Show
 								<select class="form-control" id="changePageSize" onchange="changePageSize()">
-									<option style="display:none" selected></option>
+									<option style="display:none;" selected></option>
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -460,6 +461,33 @@
 	<script
 		src="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script>
+		function deleteAll() {
+			const checkedNum = $("input[name='ids']:checked").length;
+			if(checkedNum==0){
+				alert("Please select at least one item to delete")
+				return;
+			}
+			let itemList;
+			if(confirm("Are you sure you want to delete the selected items?")){
+				itemList = new Array();
+				$("input[name='ids']:checked").each(function () {
+					itemList.push($(this).val());
+				});
+			}
+
+            $.ajax({
+				type:"post",
+				url:"${pageContext.request.contextPath}/product/batchDelete.do",
+				data:{itemList:itemList.toString()},
+				success:function () {
+					alert("Successfully Deleted");
+					location.reload();
+				},
+				error:function () {
+					alert("Failed to delete");
+				}
+			});
+		}
 		function changePageSize() {
 			//获取下拉框的值
 			let pageSize = $("#changePageSize").val();

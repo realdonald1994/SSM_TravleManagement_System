@@ -255,6 +255,7 @@
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">Detail</button>
 												<button type="button" class="btn bg-olive btn-xs">Edit</button>
+												<button type="button" class="btn bg-olive btn-xs">Delete</button>
 											</td>
 										</tr>
 									</c:forEach>

@@ -40,4 +40,47 @@ public class ProductServiceImpl implements ProductService {
     public void save(Product product) throws Exception {
         productDao.save(product);
     }
+
+    /**
+     * delete product
+     * @param productId
+     * @throws Exception
+     */
+    @Override
+    public void delete(Integer productId) throws Exception {
+        productDao.delete(productId);
+    }
+
+    /**
+     * search product by id
+     * @param productId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Product findById(Integer productId) throws Exception {
+        return productDao.findById(productId);
+    }
+
+    /**
+     * update product
+     * @param product
+     * @throws Exception
+     */
+    @Override
+    public void update(Product product) throws Exception {
+        productDao.update(product);
+    }
+
+    /**
+     * batch delete
+     * @param ids
+     * @throws Exception
+     */
+    @Override
+    public void batchDelete(List<Integer> ids) throws Exception {
+        for(Integer id:ids) {
+            productDao.delete(id);
+        }
+    }
 }
