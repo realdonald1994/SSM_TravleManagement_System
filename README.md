@@ -21,6 +21,7 @@
 - **MyBatis**
 ### 2.3. Authority Framework ###
 - **Spring Security**
+- **JSR250**
 ### 2.4. Database and connection pool ###
 - **MySQL**
 - **JdbcTemplate**
