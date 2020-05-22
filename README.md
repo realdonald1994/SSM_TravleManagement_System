@@ -1,4 +1,4 @@
-# TravleManagement_System #
+# TravelManagement_System #
 
 ![](https://img.shields.io/badge/release-v1.0.8-blue)
 [![GITEE](https://img.shields.io/badge/Gitee-repo-green)](https://gitee.com/realdonald1994/SSM_TravleManagement_System/tree/master)
@@ -10,9 +10,9 @@
 ### Spring Security: [Spring Security](https://spring.io/projects/spring-security) ###
 # 1. System demo #
 ### 1.1 User Management ###
-![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/User.png)
+![](https://github.com/realdonald1994/SSM_TravelManagement_System/blob/master/User.png)
 ### 1.2 Product Management ###
-![](https://github.com/realdonald1994/SSM_TravleManagement_System/blob/master/Product.png)
+![](https://github.com/realdonald1994/SSM_TravelManagement_System/blob/master/Product.png)
 # 2. Technical framework #
 ### 2.1. Development environment ###
 - **JDK1.8**
