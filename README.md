@@ -1,6 +1,6 @@
 # TravelManagement_System #
 
-![](https://img.shields.io/badge/release-v1.0.8-blue)
+![Version](https://img.shields.io/badge/release-v1.0.8-blue)
 [![GITEE](https://img.shields.io/badge/Gitee-repo-green)](https://gitee.com/realdonald1994/SSM_TravleManagement_System/tree/master)
 
 
